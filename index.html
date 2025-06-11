@@ -26,6 +26,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       z-index: 1000;
       opacity: 1;
       transition: opacity 1s ease;
@@ -42,6 +43,7 @@
       box-shadow: 0 0 20px rgba(0,0,0,0.6);
       opacity: 0;
       animation: fadeIn 1s forwards;
+      margin-bottom: 1rem;
     }
 
     @keyframes fadeIn {
@@ -66,27 +68,69 @@
       transition: filter 1s ease;
     }
 
+    /* Loading bar container */
+    .loading-bar-container {
+      width: 240px;
+      height: 6px;
+      background: #2a2a2a;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    /* Animated loading bar */
+    .loading-bar {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #4caf50, #81c784);
+      border-radius: 4px;
+      animation: loadingFill 4s linear forwards;
+    }
+
+    @keyframes loadingFill {
+      to {
+        width: 100%;
+      }
+    }
+
     header {
       background-color: #1e1e1e;
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
     }
 
     header h1 {
       margin: 0;
       font-size: 1.5rem;
+      color: #f0f0f0;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
     }
 
     nav a {
-      color: #ffffff;
+      color: #121212;
+      background-color: #4caf50;
+      padding: 0.5rem 1.25rem;
+      border-radius: 25px;
       text-decoration: none;
-      margin-left: 1.5rem;
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 2px 5px rgba(76, 175, 80, 0.5);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    nav a:hover,
+    nav a:focus {
+      background-color: #81c784;
+      box-shadow: 0 4px 12px rgba(129, 199, 132, 0.8);
+      outline: none;
     }
 
     main {
@@ -128,6 +172,7 @@
       background-color: #1e1e1e;
       padding: 1.2rem 1.5rem;
       border-radius: 10px;
+      margin-bottom: 1rem;
     }
 
     .cert-icon {
@@ -154,6 +199,9 @@
       <div>portfolio</div>
       <p>by Liam</p>
     </div>
+    <div class="loading-bar-container">
+      <div class="loading-bar"></div>
+    </div>
   </div>
 
   <!-- Main Page Content -->
@@ -161,69 +209,4 @@
     <header>
       <h1>Liam Currie</h1>
       <nav>
-        <a href="#about">About Me</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#resume">Resume</a>
-      </nav>
-    </header>
-
-    <main>
-      <!-- About Me -->
-      <section id="about">
-        <h2>About Me</h2>
-        <div class="card">
-          <p>Hey, I’m Liam — a 15-year-old student from Woodlawn High who’s always pushing to be the best version of myself. My grades usually sit between 92–95%, though gym’s my outlier... even though I love sports.</p>
-          <p>Football? That’s where I come alive. The field gives me energy and peace. I’ve been rocking with the Pittsburgh Steelers since forever — Antonio Brown, 2010s NFL highlights, that kind of vibe.</p>
-          <p>My goals? NFL might be a dream, but I’ve got my feet on the ground. I’m looking to enter the trades, build a solid business, and take care of my future family right here in Canada.</p>
-          <p>Outside the classroom, I’m in the gym 3–4 times a week. Fitness fuels my confidence. Oh, and Die Hard is peak cinema.</p>
-        </div>
-      </section>
-
-      <!-- Certifications -->
-      <section id="certifications">
-        <h2>Certifications</h2>
-        <div class="cert-card">
-          <div class="cert-icon">🛠️</div>
-          <div>
-            <strong>CELT (Construction Entry-Level Training)</strong><br />
-            Construction-focused training covering risks and safety on job sites. Prepares individuals to stay alert and safe.
-          </div>
-        </div>
-        <div class="cert-card">
-          <div class="cert-icon">⚠️</div>
-          <div>
-            <strong>WHMIS (Workplace Hazardous Materials Information System)</strong><br />
-            Safety training for handling hazardous materials in workplaces — labeling, protection, emergency response.
-          </div>
-        </div>
-      </section>
-
-      <!-- Resume -->
-      <section id="resume">
-        <h2>Resume</h2>
-        <div class="resume-cta">
-          🚧 My full resume is in the works! Check back soon for updates.
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      &copy; 2025 Liam Currie. All rights reserved.
-    </footer>
-  </div>
-
-  <script>
-    window.addEventListener('load', () => {
-      const popup = document.getElementById('popup');
-      const content = document.getElementById('content');
-      content.classList.add('blurred');
-
-      setTimeout(() => {
-        popup.classList.add('fade-out');
-        content.classList.remove('blurred');
-        setTimeout(() => popup.style.display = 'none', 1000);
-      }, 4000);
-    });
-  </script>
-</body>
-</html>
+        <
