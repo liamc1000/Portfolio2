@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <title>Liam Currie Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="your-favicon.ico" />
   <style>
     html {
       scroll-behavior: smooth;
@@ -17,7 +16,6 @@
       color: #f0f0f0;
     }
 
-    /* --- Popup Styles --- */
     #popup {
       position: fixed;
       top: 0;
@@ -108,26 +106,44 @@
       line-height: 1.6;
     }
 
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-
-    li {
-      margin-bottom: 1.5rem;
-      background-color: #1e1e1e;
-      padding: 1rem;
-      border-radius: 0.5rem;
-    }
-
-    li strong {
-      font-size: 1.1rem;
-    }
-
     footer {
       text-align: center;
       padding: 2rem;
       color: #777;
+    }
+
+    /* Card styles */
+    .card {
+      background: linear-gradient(145deg, #1f1f1f, #141414);
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      margin-bottom: 2rem;
+    }
+
+    .cert-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      background-color: #1e1e1e;
+      padding: 1.2rem 1.5rem;
+      border-radius: 10px;
+    }
+
+    .cert-icon {
+      font-size: 2rem;
+      margin-top: 4px;
+    }
+
+    .resume-cta {
+      background: #1e1e1e;
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #ccc;
+      font-style: italic;
+      border: 1px dashed #444;
     }
   </style>
 </head>
@@ -140,7 +156,7 @@
     </div>
   </div>
 
-  <!-- Main Content -->
+  <!-- Main Page Content -->
   <div id="content">
     <header>
       <h1>Liam Currie</h1>
@@ -152,39 +168,42 @@
     </header>
 
     <main>
+      <!-- About Me -->
       <section id="about">
         <h2>About Me</h2>
-        <p>
-          Hello, my name is Liam — welcome to my digital portfolio. I’m a 15-year-old high school student currently enrolled at Woodlawn High School. I consistently achieve strong academic results, with most of my grades falling between 92% and 95%, although gym is a surprising outlier given my enthusiasm for sports.
-        </p>
-        <p>
-          Football is my greatest passion. For me, it’s more than just a sport — it’s a source of peace and motivation. Whether I’m on the field or watching a game, football gives me a sense of purpose and energy. I’ve been a fan of the Pittsburgh Steelers since I was young, and I especially admire Antonio Brown and the dynamic style of football from the 2010s.
-        </p>
-        <p>
-          Like many, I dream big — one of my goals is to one day make it to the NFL. While that dream may be ambitious, I’m also focused on more grounded aspirations. I plan to pursue a career in the trades and build a successful business in Canada, where I can work hard and provide for my future family.
-        </p>
-        <p>
-          Outside of school and sports, I dedicate time to working out 3–4 times a week, following a personalized training split. I highly recommend fitness to anyone looking to boost their confidence and health. I’m also a fan of classic action movies, with the Die Hard series ranking at the top of my favorites.
-        </p>
+        <div class="card">
+          <p>Hey, I’m Liam — a 15-year-old student from Woodlawn High who’s always pushing to be the best version of myself. My grades usually sit between 92–95%, though gym’s my outlier... even though I love sports.</p>
+          <p>Football? That’s where I come alive. The field gives me energy and peace. I’ve been rocking with the Pittsburgh Steelers since forever — Antonio Brown, 2010s NFL highlights, that kind of vibe.</p>
+          <p>My goals? NFL might be a dream, but I’ve got my feet on the ground. I’m looking to enter the trades, build a solid business, and take care of my future family right here in Canada.</p>
+          <p>Outside the classroom, I’m in the gym 3–4 times a week. Fitness fuels my confidence. Oh, and Die Hard is peak cinema.</p>
+        </div>
       </section>
 
+      <!-- Certifications -->
       <section id="certifications">
         <h2>Certifications</h2>
-        <ul>
-          <li>
+        <div class="cert-card">
+          <div class="cert-icon">🛠️</div>
+          <div>
             <strong>CELT (Construction Entry-Level Training)</strong><br />
-            A construction-based certification that provides awareness of common risks and safety protocols on construction sites. It helps prepare individuals to act appropriately and safely in a construction environment.
-          </li>
-          <li>
+            Construction-focused training covering risks and safety on job sites. Prepares individuals to stay alert and safe.
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">⚠️</div>
+          <div>
             <strong>WHMIS (Workplace Hazardous Materials Information System)</strong><br />
-            Covers essential information about hazardous materials used in workplaces and teaches safe handling, labeling, and emergency procedures.
-          </li>
-        </ul>
+            Safety training for handling hazardous materials in workplaces — labeling, protection, emergency response.
+          </div>
+        </div>
       </section>
 
+      <!-- Resume -->
       <section id="resume">
         <h2>Resume</h2>
-        <p>Coming soon...</p>
+        <div class="resume-cta">
+          🚧 My full resume is in the works! Check back soon for updates.
+        </div>
       </section>
     </main>
 
