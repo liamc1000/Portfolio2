@@ -125,4 +125,86 @@
     }
 
     footer {
-      text-align
+      text-align: center;
+      padding: 2rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <!-- Popup -->
+  <div id="popup">
+    <div class="popup-content">
+      <div>portfolio</div>
+      <p>by Liam</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div id="content">
+    <header>
+      <h1>Liam Currie</h1>
+      <nav>
+        <a href="#about">About Me</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#resume">Resume</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="about">
+        <h2>About Me</h2>
+        <p>
+          Hello, my name is Liam — welcome to my digital portfolio. I’m a 15-year-old high school student currently enrolled at Woodlawn High School. I consistently achieve strong academic results, with most of my grades falling between 92% and 95%, although gym is a surprising outlier given my enthusiasm for sports.
+        </p>
+        <p>
+          Football is my greatest passion. For me, it’s more than just a sport — it’s a source of peace and motivation. Whether I’m on the field or watching a game, football gives me a sense of purpose and energy. I’ve been a fan of the Pittsburgh Steelers since I was young, and I especially admire Antonio Brown and the dynamic style of football from the 2010s.
+        </p>
+        <p>
+          Like many, I dream big — one of my goals is to one day make it to the NFL. While that dream may be ambitious, I’m also focused on more grounded aspirations. I plan to pursue a career in the trades and build a successful business in Canada, where I can work hard and provide for my future family.
+        </p>
+        <p>
+          Outside of school and sports, I dedicate time to working out 3–4 times a week, following a personalized training split. I highly recommend fitness to anyone looking to boost their confidence and health. I’m also a fan of classic action movies, with the Die Hard series ranking at the top of my favorites.
+        </p>
+      </section>
+
+      <section id="certifications">
+        <h2>Certifications</h2>
+        <ul>
+          <li>
+            <strong>CELT (Construction Entry-Level Training)</strong><br />
+            A construction-based certification that provides awareness of common risks and safety protocols on construction sites. It helps prepare individuals to act appropriately and safely in a construction environment.
+          </li>
+          <li>
+            <strong>WHMIS (Workplace Hazardous Materials Information System)</strong><br />
+            Covers essential information about hazardous materials used in workplaces and teaches safe handling, labeling, and emergency procedures.
+          </li>
+        </ul>
+      </section>
+
+      <section id="resume">
+        <h2>Resume</h2>
+        <p>Coming soon...</p>
+      </section>
+    </main>
+
+    <footer>
+      &copy; 2025 Liam Currie. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      const popup = document.getElementById('popup');
+      const content = document.getElementById('content');
+      content.classList.add('blurred');
+
+      setTimeout(() => {
+        popup.classList.add('fade-out');
+        content.classList.remove('blurred');
+        setTimeout(() => popup.style.display = 'none', 1000);
+      }, 4000);
+    });
+  </script>
+</body>
+</html>
