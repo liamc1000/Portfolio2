@@ -24,7 +24,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background-color: #121212; /* fully opaque */
+      background-color: #121212;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -63,13 +63,11 @@
       pointer-events: none;
     }
 
-    /* --- Blur effect --- */
     .blurred {
       filter: blur(5px);
       transition: filter 1s ease;
     }
 
-    /* --- Rest of page styling --- */
     header {
       background-color: #1e1e1e;
       padding: 1rem 2rem;
@@ -127,65 +125,4 @@
     }
 
     footer {
-      text-align: center;
-      padding: 2rem;
-      color: #777;
-    }
-  </style>
-</head>
-<body>
-  <!-- Popup -->
-  <div id="popup">
-    <div class="popup-content">
-      <div>portfolio</div>
-      <p>by Liam</p>
-    </div>
-  </div>
-
-  <!-- Main Page Content -->
-  <div id="content">
-    <header>
-      <h1>Liam Currie</h1>
-      <nav>
-        <a href="#about">About Me</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#resume">Resume</a>
-      </nav>
-    </header>
-    <main>
-      <section id="about">
-        <h2>About Me</h2>
-        <p>Hello, my name is Liam — welcome to my digital portfolio...</p>
-      </section>
-
-      <section id="certifications">
-        <h2>Certifications</h2>
-        <ul>
-          <li><strong>CELT</strong><br />Construction safety basics...</li>
-          <li><strong>WHMIS</strong><br />Safe handling of materials...</li>
-        </ul>
-      </section>
-
-      <section id="resume">
-        <h2>Resume</h2>
-        <p>Coming soon...</p>
-      </section>
-    </main>
-    <footer>&copy; 2025 Liam Currie. All rights reserved.</footer>
-  </div>
-
-  <script>
-    window.addEventListener('load', () => {
-      const popup = document.getElementById('popup');
-      const content = document.getElementById('content');
-      content.classList.add('blurred');
-
-      setTimeout(() => {
-        popup.classList.add('fade-out');
-        content.classList.remove('blurred');
-        setTimeout(() => popup.style.display = 'none', 1000);
-      }, 4000); // 4 seconds delay
-    });
-  </script>
-</body>
-</html>
+      text-align
