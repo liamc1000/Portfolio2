@@ -62,9 +62,56 @@
       padding: 2rem;
       color: #777;
     }
+
+    /* --- POPUP STYLES --- */
+    #popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(18, 18, 18, 0.95);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      opacity: 1;
+      transition: opacity 1s ease;
+    }
+
+    .popup-content {
+      text-align: center;
+      color: #ffffff;
+      font-size: 2rem;
+      font-weight: bold;
+      background-color: #1e1e1e;
+      padding: 2rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    }
+
+    .popup-content p {
+      margin: 0.5rem 0 0;
+      font-size: 1.2rem;
+      font-weight: normal;
+    }
+
+    /* Hidden state */
+    #popup.fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
+  <!-- POPUP MODAL -->
+  <div id="popup">
+    <div class="popup-content">
+      <div>portfolio</div>
+      <p>by Liam</p>
+    </div>
+  </div>
+
   <header>
     <h1>Liam Currie</h1>
     <nav>
@@ -110,6 +157,16 @@
   <footer>
     &copy; 2025 Liam Currie. All rights reserved.
   </footer>
+
+  <!-- JAVASCRIPT TO FADE OUT POPUP -->
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const popup = document.getElementById('popup');
+        popup.classList.add('fade-out');
+        setTimeout(() => popup.style.display = 'none', 1000); // fully remove after fade
+      }, 2000); // wait 2 seconds before starting fade
+    });
+  </script>
 </body>
 </html>
-
